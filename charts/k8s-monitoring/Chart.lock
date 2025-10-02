@@ -35,8 +35,11 @@ dependencies:
 - name: feature-prometheus-operator-objects
   repository: ""
   version: 1.0.0
+- name: feature-logs-receiver
+  repository: ""
+  version: 1.0.0
 - name: alloy-operator
   repository: https://grafana.github.io/helm-charts
   version: 0.3.9
-digest: sha256:4e082502ba1421599812a03c1325cdc7a24463173661aceb82bfaecd45692466
-generated: "2025-09-12T17:30:34.07217-05:00"
+digest: sha256:f1c4329017ba5d3ea73f0718d2dd50f9ea8a78ecd8a0d3da2f98c678a5a5ed3d
+generated: "2025-09-30T18:13:32.996217648+03:00"

@@ -10,6 +10,7 @@
 - profilesReceiver
 - profiling
 - prometheusOperatorObjects
+- logsReceiver
 - integrations
 - selfReporting
 {{- end }}

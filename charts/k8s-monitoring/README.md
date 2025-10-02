@@ -248,6 +248,7 @@ details:
 |  | clusterEvents(feature-cluster-events) | 1.0.0 |
 |  | clusterMetrics(feature-cluster-metrics) | 1.0.0 |
 |  | integrations(feature-integrations) | 1.0.0 |
+|  | logsReceiver(feature-logs-receiver) | 1.0.0 |
 |  | nodeLogs(feature-node-logs) | 1.0.0 |
 |  | podLogs(feature-pod-logs) | 1.0.0 |
 |  | podLogsViaKubernetesApi(feature-pod-logs-via-kubernetes-api) | 1.0.0 |
@@ -389,6 +390,13 @@ details:
 |-----|------|---------|-------------|
 | integrations | object | No integrations enabled | Service Integrations enables gathering telemetry data for common services and applications deployed to Kubernetes. To see the valid options, please see the [Service Integrations documentation](https://github.com/grafana/k8s-monitoring-helm/tree/main/charts/k8s-monitoring/charts/feature-integrations). |
 | integrations.destinations | list | `[]` | The destinations where integration metrics will be sent. If empty, all metrics-capable destinations will be used. |
+
+### Features - Logs Receiver
+
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| logsReceiver.destinations | list | `[]` | The destinations where logs will be sent. If empty, all logs-capable destinations will be used. |
+| logsReceiver.enabled | bool | `false` | Enable gathering logs from applications. |
 
 ### Features - Node Logs
 

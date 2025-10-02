@@ -73,6 +73,11 @@ dependencies:
     repository: ""
     version: 1.0.0
     condition: prometheusOperatorObjects.enabled
+  - alias: logsReceiver
+    name: feature-logs-receiver
+    repository: ""
+    version: 1.0.0
+    condition: logsReceiver.enabled
   - name: alloy-operator
     version: 0.3.9
     repository: https://grafana.github.io/helm-charts

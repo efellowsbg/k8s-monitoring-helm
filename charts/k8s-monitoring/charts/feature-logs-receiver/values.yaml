@@ -1,0 +1,11 @@
+---
+
+# -- Port number on which the server listens for new connections.
+# @section -- Listener Configuration
+port: 8888
+
+# -- Rule blocks to be added to the loki.relabel component for received logs.
+# These relabeling rules are applied to logs received by this feature.
+# ([docs](https://grafana.com/docs/alloy/latest/reference/components/loki/loki.relabel/#rule))
+# @section -- Log Processing
+logProcessingRules: ""
