@@ -1,0 +1,45 @@
+// Feature: Logs Receiver
+declare "logs_receiver" {
+  argument "logs_destinations" {
+    comment = "Must be a list of logs destinations where collected logs should be forwarded to"
+  }
+
+  loki.source.api "default" {
+    http {
+        listen_address = "0.0.0.0"
+        listen_port = "8888"
+    }
+
+    forward_to = argument.logs_destinations.value
+  }
+}
+logs_receiver "feature" {
+  logs_destinations = [
+    loki.write.loki.receiver,
+  ]
+}
+
+
+
+
+// Destination: loki (loki)
+otelcol.exporter.loki "loki" {
+  forward_to = [loki.write.loki.receiver]
+}
+
+loki.write "loki" {
+  endpoint {
+    url = "http://loki.loki.svc"
+    tls_config {
+      insecure_skip_verify = false
+    }
+    min_backoff_period = "500ms"
+    max_backoff_period = "5m"
+    max_backoff_retries = "10"
+  }
+  external_labels = {
+    "cluster" = "logs-receiver-cluster",
+    "k8s_cluster_name" = "logs-receiver-cluster",
+  }
+}
+
