@@ -85,7 +85,7 @@ jobs:
         uses: azure/setup-helm@1a275c3b69536ee54be43f2070a358922e12c8d4  # v4.3.1
 
       - name: Setup Flux CLI
-        uses: fluxcd/flux2/action@6bf37f6a560fd84982d67f853162e4b3c2235edb  # v2.6.4
+        uses: fluxcd/flux2/action@4a15fa6a023259353ef750acf1c98fe88407d4d0  # v2.7.2
 
       - name: Check for cluster config
         id: check-cluster-config
@@ -154,7 +154,7 @@ jobs:
 
       - name: Configure AWS Credentials
         if: ${{ steps.check-cluster-config.outputs.cluster-type == 'eks' }}
-        uses: aws-actions/configure-aws-credentials@a03048d87541d1d9fcf2ecf528a4a65ba9bd7838  # v5.0.0
+        uses: aws-actions/configure-aws-credentials@00943011d9042930efac3dcd3a170e4273319bc8  # v5.1.0
         with:
           aws-access-key-id: '${{ fromJSON(steps.get-aws-credentials.outputs.secrets).AWS_ACCESS_KEY_ID }}'
           aws-secret-access-key: '${{ fromJSON(steps.get-aws-credentials.outputs.secrets).AWS_SECRET_ACCESS_KEY }}'
